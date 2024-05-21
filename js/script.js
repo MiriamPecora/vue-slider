@@ -49,11 +49,26 @@ createApp({
                 this.currentIndex = 0;
             }
     },
+    setSlide(thumbnail) {
+        this.currentIndex = thumbnail;
+    },
+    stopSlideshow() {
+        clearInterval(this.interval);
+        this.interval = null;
+    },
+    startSlideshow(){
+        if (!this.interval) {
+            this.interval = setInterval(this.nextSlide, 3000);
+        }
+
+    }
     // consoleofSlides() {
     //   console.log(this.slides);
     // },
   },
   mounted() {
+    // Creo un intervallo per settare un timer per lo slideshow all'avvio del programma
+    this.interval = setInterval(this.nextSlide, 3000);
     // this.consoleofSlides();
   },
 }).mount('#app');

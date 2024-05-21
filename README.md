@@ -18,4 +18,12 @@ Bonus:
     -Aggiungo una condizione indicando che se l'index è < di 0 allora l'index dovrà assumere il valore dell'ultimo elemento dell'array
     -Aggiungo una condizione indicando che se l'index è >= della lunghezza dell'array allora l'index dovrà riassumere il valore di 0
 -Aggiungo @click ai bottoni prev e next per renderli in ascolto delle funzioni per scorrere
--
+Bonus 1:
+    -Similmente a prima, con un v-for ciclo all'interno dell'array e recupero i valori di 'image' per inserirli all'interno delle src dei tag img. 
+        -Una volta creati gli elementi per ogni elemento dell'array, creo una funzione di cui metto in ascolto le immagini nelle thumbnail
+        -Nella funzione indico che la pic cliccata, equivale all'indice corrente, così da venire selezionata e passare come attiva
+Bonus 2:
+    -Creo un intervallo in mounted() per settare un timer per lo slideshow all'avvio del programma
+    -Creo due funzioni:
+        -Una per fermare lo slideshow al mouseover delle foto in primo piano
+        -Una per re-startare lo slideshow al mouseleave delle foto
