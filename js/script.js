@@ -1,5 +1,7 @@
+// Inizializzo VueJS
 const { createApp } = Vue;
 
+// All'interno di data, inserisco l'array di oggetti che mi era stato fornito
 createApp({
   data() {
     return {
@@ -30,14 +32,28 @@ createApp({
           text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
         },
       ],
+      currentIndex: 0,
     };
   },
+
   methods: {
-    consoleofSlides() {
-      console.log(this.slides);
+    prevSlide(){
+        this.currentIndex--
+        if (this.currentIndex < 0) {
+                this.currentIndex = this.slides.length - 1;
+            }
     },
+    nextSlide(){
+        this.currentIndex++
+        if (this.currentIndex >= this.slides.length) {
+                this.currentIndex = 0;
+            }
+    },
+    // consoleofSlides() {
+    //   console.log(this.slides);
+    // },
   },
   mounted() {
-    this.consoleofSlides();
+    // this.consoleofSlides();
   },
 }).mount('#app');
